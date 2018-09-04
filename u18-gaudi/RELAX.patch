@@ -1,0 +1,20 @@
+diff -cr RELAX-orig/Dictionaries/CMakeLists.txt RELAX/Dictionaries/CMakeLists.txt
+*** RELAX-orig/Dictionaries/CMakeLists.txt	Mon Jul 10 12:17:57 2017
+--- RELAX/Dictionaries/CMakeLists.txt	Mon Aug 27 13:47:56 2018
+***************
+*** 1,7 ****
+  find_package(ROOT COMPONENTS Core GenVector)
+  find_package(GCCXML REQUIRED)
+  
+! set(ROOT_genreflex_CMD ${ROOT_BINARY_PATH}/genreflex) 
+  
+  #-------------------------------------------------------------------------------
+  # relax_generate_dictionary(dictionary headerfile selectionfile OPTIONS opt1 opt2 ...)
+--- 1,7 ----
+  find_package(ROOT COMPONENTS Core GenVector)
+  find_package(GCCXML REQUIRED)
+  
+! include("${ROOT_DIR}/ROOTUseFile.cmake")
+  
+  #-------------------------------------------------------------------------------
+  # relax_generate_dictionary(dictionary headerfile selectionfile OPTIONS opt1 opt2 ...)

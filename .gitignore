@@ -1,0 +1,13 @@
+# Standard stuff for backup files and some Eclipse, OS X auxilliary files  
+*~
+.*~
+~*
+.#*
+.project
+.pydevproject
+.DS_Store
+# Also ignore binary source files here (no clutter, please)
+# In the relevant docker file please say where these source came from!
+*.tar.gz
+*.zip
+*.tar.bz2

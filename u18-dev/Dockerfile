@@ -3,7 +3,6 @@
 # by the pre-compiled ROOT version that's installed here
 #
 # Tested this is good for PODIO development
-# N.B. Download the ROOT tarball from https://root.cern.ch/content/release-61404
 #
 FROM ubuntu:bionic
 LABEL maintainer="Graeme Stewart <graeme.andrew.stewart@cern.ch>"
@@ -22,6 +21,14 @@ RUN apt-get -y install libtbb2 libtbb-dev
 RUN apt-get -y install emacs
 RUN apt-get -y install doxygen gdb google-perftools libgoogle-perftools-dev zip
 
+## These are some dependencies that Gaudi needs
+RUN apt-get -y install librange-v3-dev gsl-bin libgsl-dev libcppunit-1.14-0 libcppunit-dev
+RUN apt-get -y install libxerces-c-dev uuid-dev libunwind-dev libunwind8 
+# libmsgsl-dev is the MS Guidelines Support Library
+RUN apt-get -y install libpng-dev libpng16-16 libjemalloc1 libmsgsl-dev
+
+# This should be the latest ROOT release
+# Download from https://root.cern.ch/content/release-61404
 COPY root_v6.14.04.Linux-ubuntu18-x86_64-gcc7.3.tar.gz /tmp
 WORKDIR /opt
 RUN tar -xvzf /tmp/root_v6.14.04.Linux-ubuntu18-x86_64-gcc7.3.tar.gz

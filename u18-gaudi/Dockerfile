@@ -1,18 +1,12 @@
-# Ubuntu 18 development docker
-# This is based around the gcc7 compiler as this is the one used
-# by the pre-compiled ROOT version that's installed here
+# Ubuntu 18 development docker for Gaudi
 #
+# This builds on the Ubuntu specific packeged u18-dev
+# and installs the dependencies that Gaudi requires
 #
 FROM graemeastewart/u18-dev
 LABEL maintainer="Graeme Stewart <graeme.andrew.stewart@cern.ch>"
 
 ENV DEBIAN_FRONTEND=noninteractive
-
-## Gaudi things
-RUN apt-get -y install librange-v3-dev gsl-bin libgsl-dev libcppunit-1.14-0 libcppunit-dev
-RUN apt-get -y install libxerces-c-dev uuid-dev libunwind-dev libunwind8 
-# libmsgsl-dev is the MS Guidelines Support Library
-RUN apt-get -y install libpng-dev libpng16-16 libjemalloc1 libmsgsl-dev
 
 ## HEP things for Gaudi: CLHEP, AIDA, HepPDT, RELAX, HepMC, VC
 # CLHEP (tarball built from a clone of https://gitlab.cern.ch/CLHEP/CLHEP, tag CLHEP_2_4_1_0)

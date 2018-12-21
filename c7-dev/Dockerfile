@@ -9,9 +9,19 @@ RUN yum -y update
 # Now install development packages
 RUN yum -y install centos-release-scl
 RUN yum -y install devtoolset-7
-RUN yum -y install cmake3 rapidjson-devel git psmisc boost boost-devel emacs python36
-
+RUN yum -y install gcc-c++ gcc-gfortran cmake3 boost boost-devel
+RUN yum -y install rapidjson-devel json-devel
+RUN yum -y install git psmisc emacs python36
+RUN yum -y install patch sudo bzip2
 
 # Clean up to reduce final size
 RUN yum clean all
 RUN rm -f epel-release-latest-7.noarch.rpm
+
+# Add a hsf user to avoid having to use root, add sudo rights
+# (passwd "hsf")
+RUN useradd -G wheel -p '$6$JmsT1xYM$CdWIKb6aHhqWniaanWDq1Hi9qF4pXJlmsSHrqDDjF8CsYG3w8WyTO4/.xBnG71Zx1aROZ.S.ZoR2BARuB4QBN1' hsf
+
+USER hsf
+WORKDIR /home/hsf
+CMD ["/bin/bash", "-l"]

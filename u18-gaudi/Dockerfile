@@ -1,6 +1,6 @@
 # Ubuntu 18 development docker for Gaudi
 #
-# This builds on the Ubuntu specific packeged u18-dev
+# This builds on the Ubuntu specific packaged u18-dev
 # and installs the dependencies that Gaudi requires
 #
 FROM graemeastewart/u18-dev
@@ -52,7 +52,7 @@ RUN make install
 WORKDIR /tmp
 RUN rm -fr /tmp/hepmc
 
-# RELAX 
+# RELAX
 # RELAX needs a patch to use ROOT's more modern CMake setup correctly
 # RELAX tarball downlaoded from http://lcgpackages.web.cern.ch/lcgpackages/tarFiles/sources/RELAX-root6.tar.gz
 COPY FindHepMC.cmake /usr/share/cmake-3.10/Modules

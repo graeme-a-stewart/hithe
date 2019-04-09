@@ -12,9 +12,15 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get install -y libhdf5-dev hdf5-tools
 
+# The 6.16.00 pre-built ROOT for U18 gave some very strange problems with
+# non-existing PATHS (funny references to
+# /mnt/build/ws/BUILDTYPE/Release/LABEL/ROOT-ubuntu18.04/build/lib).
+# 6.14.06 seems to work fine.
 WORKDIR /opt
-COPY root_v6.16.00.Linux-ubuntu18-x86_64-gcc7.3.tar.gz /opt
-RUN tar -xvzf root_v6.16.00.Linux-ubuntu18-x86_64-gcc7.3.tar.gz
+ARG ROOT=root_v6.14.06.Linux-ubuntu18-x86_64-gcc7.3.tar.gz
+COPY $ROOT /opt
+RUN tar -xvzf $ROOT
+RUN rm /opt/$ROOT
 
 USER hsf
 WORKDIR /home/hsf

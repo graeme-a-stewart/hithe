@@ -11,7 +11,7 @@ RUN yum -y install centos-release-scl
 RUN yum -y install m4 autoconf automake
 RUN yum -y install gcc-c++ gcc-gfortran make cmake3 
 RUN yum -y install git psmisc emacs
-RUN yum -y install patch sudo bzip2 zip unzip
+RUN yum -y install patch sudo bzip2 zip unzip file
 
 # Clean up to reduce final size
 RUN yum clean all

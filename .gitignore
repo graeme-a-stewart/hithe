@@ -11,3 +11,6 @@
 *.tar.gz
 *.zip
 *.tar.bz2
+
+# VS Code files
+*.code-workspace

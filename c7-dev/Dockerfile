@@ -16,6 +16,7 @@ RUN yum -y install rapidjson-devel json-devel
 RUN yum -y install git psmisc emacs python-devel python36 python3-devel
 RUN yum -y install patch sudo bzip2 
 RUN yum -y install libX11-devel libXpm-devel libXft-devel libXext-devel
+RUN yum -y install xerces-c xerces-c-devel
 
 # Clean up to reduce final size
 RUN yum clean all

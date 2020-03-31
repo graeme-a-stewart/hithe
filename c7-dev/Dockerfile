@@ -8,11 +8,14 @@ RUN yum -y update
 
 # Now install development packages
 RUN yum -y install centos-release-scl
-RUN yum -y install devtoolset-7
+
+# See https://www.softwarecollections.org/en/scls/rhscl/devtoolset-8/
+RUN yum -y install devtoolset-8
 RUN yum -y install gcc-c++ gcc-gfortran cmake3 boost boost-devel
 RUN yum -y install rapidjson-devel json-devel
-RUN yum -y install git psmisc emacs python36
-RUN yum -y install patch sudo bzip2
+RUN yum -y install git psmisc emacs python-devel python36 python3-devel
+RUN yum -y install patch sudo bzip2 
+RUN yum -y install libX11-devel libXpm-devel libXft-devel libXext-devel
 
 # Clean up to reduce final size
 RUN yum clean all

@@ -18,7 +18,7 @@ RUN yum -y install patch sudo bzip2
 RUN yum -y install libX11-devel libXpm-devel libXft-devel libXext-devel cairo-devel pango-devel
 RUN yum -y install xerces-c xerces-c-devel
 RUN yum -y install python3 python3-devel
-RUN yum -y pciutils
+RUN yum -y install pciutils
 
 # Clean up to reduce final size
 RUN yum clean all

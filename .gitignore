@@ -11,6 +11,7 @@
 *.tar.gz
 *.zip
 *.tar.bz2
+*.rpm
 
 # VS Code files
 *.code-workspace

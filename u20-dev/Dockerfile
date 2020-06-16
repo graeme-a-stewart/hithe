@@ -17,6 +17,7 @@ RUN apt-get -y install python3-yaml
 RUN apt-get -y install libtbb2 libtbb-dev
 RUN apt-get -y install emacs
 RUN apt-get -y install doxygen gdb google-perftools libgoogle-perftools-dev zip
+RUN apt-get -y install clang-format clang-tidy
 
 # Add a hsf user to avoid having to use root, add sudo rights
 # (passwd "hsf")

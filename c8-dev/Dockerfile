@@ -12,6 +12,7 @@ RUN yum -y update
 # See https://www.softwarecollections.org/en/scls/rhscl/devtoolset-8/
 #RUN yum -y install devtoolset-8
 RUN yum -y install gcc-c++ gcc-gfortran cmake3 boost boost-devel make
+RUN yum -y install llvm-toolset
 RUN yum -y install json-devel
 RUN yum -y install git psmisc emacs
 RUN yum -y install patch sudo bzip2 

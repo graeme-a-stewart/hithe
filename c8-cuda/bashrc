@@ -1,0 +1,29 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+alias a=alias
+alias e=emacs
+alias h='history | tail -20'
+alias hs='history | grep $*'
+alias j=jobs
+alias m=less
+alias u=unalias
+alias which="type -path"
+
+alias p='ps ux'
+alias pa='ps aux'
+alias v="ls -l"
+
+
+# User specific environment
+PATH="/opt/cmake-3.17.3-Linux-x86_64/bin:/usr/local/cuda/bin:$HOME/bin:$PATH"
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions

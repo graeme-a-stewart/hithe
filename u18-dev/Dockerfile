@@ -17,7 +17,7 @@ RUN apt-get install -y gcc-7 g++-7 gfortran
 RUN apt-get install -y cmake cmake-extras cmake-curses-gui git
 RUN apt-get install -y libboost1.65 libboost-dev psmisc rapidjson-dev nlohmann-json-dev
 
-RUN apt-get -y install python-yaml python3-yaml
+RUN apt-get -y install python-yaml python3-yaml python3-pip python3-distro
 RUN apt-get -y install x11-common x11-utils
 RUN apt-get -y install libtbb2 libtbb-dev
 RUN apt-get -y install emacs

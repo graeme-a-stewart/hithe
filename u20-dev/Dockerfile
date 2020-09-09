@@ -13,11 +13,11 @@ RUN apt-get install -y gcc-9 g++-9 gfortran
 RUN apt-get install -y cmake cmake-extras cmake-curses-gui git
 RUN apt-get install -y libboost1.71 psmisc nlohmann-json3-dev
 
-RUN apt-get -y install python3-yaml
+RUN apt-get -y install python3-yaml python3-pip python3-distro flake8 black
 RUN apt-get -y install libtbb2 libtbb-dev
 RUN apt-get -y install emacs
 RUN apt-get -y install doxygen gdb google-perftools libgoogle-perftools-dev zip
-RUN apt-get -y install clang-format clang-tidy
+RUN apt-get -y install clang-format clang-tidy ninja-build
 
 # Add a hsf user to avoid having to use root, add sudo rights
 # (passwd "hsf")

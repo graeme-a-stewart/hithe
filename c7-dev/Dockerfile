@@ -27,6 +27,14 @@ RUN rm -f epel-release-latest-7.noarch.rpm
 # (passwd "hsf")
 RUN useradd -G wheel -p '$6$JmsT1xYM$CdWIKb6aHhqWniaanWDq1Hi9qF4pXJlmsSHrqDDjF8CsYG3w8WyTO4/.xBnG71Zx1aROZ.S.ZoR2BARuB4QBN1' hsf
 
+# Likewise add my usual username with my usual uid, so avoid problems on CERN
+# hosts where UID remapping doesn't work
+RUN useradd -G wheel -u 25606 -p '$6$JmsT1xYM$CdWIKb6aHhqWniaanWDq1Hi9qF4pXJlmsSHrqDDjF8CsYG3w8WyTO4/.xBnG71Zx1aROZ.S.ZoR2BARuB4QBN1' graemes
+
+WORKDIR /home/graemes
+COPY --chown=graemes .bash_profile .
+COPY --chown=graemes .bashrc .
+
 USER hsf
 WORKDIR /home/hsf
 COPY --chown=hsf .bash_profile .

@@ -1,4 +1,4 @@
-FROM centos:8
+FROM centos:centos8
 LABEL maintainer="Graeme Stewart <graeme.andrew.stewart@cern.ch>"
 
 # Install EPEL and update to package

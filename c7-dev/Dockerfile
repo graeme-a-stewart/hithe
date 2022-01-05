@@ -17,7 +17,7 @@ RUN yum -y install git psmisc emacs python-devel
 RUN yum -y install python36 python3-devel python36-distro python3-pip
 RUN yum -y install patch sudo bzip2 file redhat-lsb-core
 RUN yum -y install libX11-devel libXpm-devel libXft-devel libXext-devel libglvnd-devel
-RUN yum -y install xerces-c xerces-c-devel
+RUN yum -y install xerces-c xerces-c-devel openssl-devel
 RUN yum -y install xterm xorg-x11-apps
 
 # Clean up to reduce final size
